@@ -1,3 +1,6 @@
 [librewolf-bin]
 source = "git"
 git = "https://codeberg.org/librewolf/source.git"
+exclude_regex = "v.*"
+from_pattern = '([\d.]+)-(\d+)'
+to_pattern = '\1_\2'
