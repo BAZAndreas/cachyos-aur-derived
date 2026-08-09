@@ -56,6 +56,7 @@ makedepends=('boost'
              'ninja'
              'python'
              'range-v3'
+             'qt6-shadertools'
              'tl-expected')
 optdepends=('geoclue: geoinformation support'
             'crow-translate: translation provider'

@@ -17,6 +17,7 @@ pkgbase = ayugram-desktop
 	makedepends = ninja
 	makedepends = python
 	makedepends = range-v3
+	makedepends = qt6-shadertools
 	makedepends = tl-expected
 	depends = abseil-cpp
 	depends = ada
