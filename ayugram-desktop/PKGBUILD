@@ -16,7 +16,7 @@ depends=('abseil-cpp'
          'hunspell'
          'kcoreaddons'
          'libavif'
-         'libdispatch'
+         'libfido2'
          'libgcc'
          'libheif'
          'libjpeg-turbo'
@@ -58,7 +58,8 @@ makedepends=('boost'
              'python'
              'range-v3'
              'qt6-shadertools'
-             'tl-expected')
+             'tl-expected'
+             'vulkan-headers')
 optdepends=('geoclue: geoinformation support'
             'crow-translate: translation provider'
             'webkit2gtk-4.1: embedded browser features provided by webkit2gtk-4.1'
@@ -66,18 +67,12 @@ optdepends=('geoclue: geoinformation support'
             'xdg-desktop-portal: desktop integration')
 _tdlib_commit=51743dfd01dff6179e2d8f7095729caa4e2222e9
 source=("AyuGram-$pkgver-full.tar.gz::https://github.com/AyuGram/AyuGramDesktop/releases/download/v$pkgver/AyuGramDesktop-$pkgver-full.tar.gz"
-        "td-$_tdlib_commit.tar.gz::https://github.com/tdlib/td/archive/$_tdlib_commit.tar.gz"
-        "0002-fix-missing-cstdint.diff")
+        "td-$_tdlib_commit.tar.gz::https://github.com/tdlib/td/archive/$_tdlib_commit.tar.gz")
 
 sha256sums=('ce74c400e488fc90d3784f3ba3d602cafecd5053b7a273a597718683a47abb0f'
             'f2c6b92533ba41a024b9fdb86d346c8bfc876d5961738ad463effbd844d61405'
             '566920c751e0f599411ff914649ffbf1f19e26a0ead368d9c4a18cbf760406e1')
 
-prepare() {
-    cd "$srcdir/AyuGramDesktop-$pkgver-full"
-    # uint8_t, uint_64_t, etc.
-    patch -Np1 -d Telegram/ThirdParty/tgcalls -i "$srcdir/0002-fix-missing-cstdint.diff"
-}
 build() {
     cmake -B td-$_tdlib_commit/build -S td-$_tdlib_commit \
         -DCMAKE_BUILD_TYPE=None \
@@ -85,7 +80,7 @@ build() {
         -Wno-dev \
         -DTD_E2E_ONLY=ON
     cmake --build td-$_tdlib_commit/build
-    cmake --install td-$_tdlib_commit/build  
+    cmake --install td-$_tdlib_commit/build
     # https://github.com/AyuGram/AyuGramDesktop/blob/dev/docs/building-linux.md#building-the-project
     # for API_ID and API_HASH
     cmake -B build -S "AyuGramDesktop-$pkgver-full" -G Ninja \
