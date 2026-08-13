@@ -13,6 +13,8 @@ depends=(
   'libarchive'
   'libgee'
   'libsoup3'
+  'libnotify'
+  'sdl3'
 )
 makedepends=(
   'meson'

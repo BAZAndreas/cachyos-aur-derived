@@ -14,6 +14,8 @@ pkgbase = protonplus
 	depends = libarchive
 	depends = libgee
 	depends = libsoup3
+	depends = libnotify
+	depends = sdl3
 	source = protonplus-0.6.3.tar.gz::https://github.com/Vysp3r/ProtonPlus/archive/refs/tags/v0.6.3.tar.gz
 	sha256sums = 08b75f4609cedd359d55ed01f74d61be48a9c194282645ddb7656e64a0210493
 
