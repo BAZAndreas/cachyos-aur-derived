@@ -9,7 +9,6 @@ pkgbase = supergfxctl
 	depends = gcc-libs
 	depends = systemd
 	depends = lsof
-	provides = supergfxctl
 	conflicts = supergfxctl-git
 	conflicts = optimus-manager
 	options = !debug
