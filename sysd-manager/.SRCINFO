@@ -1,9 +1,8 @@
 pkgbase = sysd-manager
 	pkgdesc = A user-friendly GUI to manage systemd units
 	pkgver = 2.20.7
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/plrigaux/sysd-manager
-	install = sysd-manager.install
 	arch = x86_64
 	license = GPL-3.0-or-later
 	makedepends = cargo
