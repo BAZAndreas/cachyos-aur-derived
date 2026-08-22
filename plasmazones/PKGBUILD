@@ -71,11 +71,8 @@ build() {
 package() {
     DESTDIR="$pkgdir" cmake --install build
 
-    # Install pacman hook to auto-refresh sycoca cache
-    install -Dm644 "PlasmaZones-$pkgver/packaging/arch/kbuildsycoca.hook" \
-        "$pkgdir/usr/share/libalpm/hooks/plasmazones-kbuildsycoca.hook"
-    install -Dm755 "PlasmaZones-$pkgver/packaging/arch/plasmazones-refresh-sycoca" \
-        "$pkgdir/usr/share/libalpm/scripts/plasmazones-refresh-sycoca"
+    # NOTE: shouldn't be needed to run additionally with su -
+    # plasma already should automatically build cache on session launch
 
     # License files — GPL-3.0-or-later (main) + LGPL-2.1-or-later (the
     # bundled Phosphor component libraries). The `license=()` array
