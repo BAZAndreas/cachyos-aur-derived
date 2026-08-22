@@ -1,9 +1,9 @@
 pkgbase = ab-download-manager
 	pkgdesc = A Download Manager that speeds up your downloads
 	pkgver = 1.10.1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://abdownloadmanager.com
-	arch = any
+	arch = x86_64
 	license = Apache-2.0
 	makedepends = git
 	makedepends = java-environment=21
