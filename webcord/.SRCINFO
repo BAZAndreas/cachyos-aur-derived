@@ -1,13 +1,13 @@
 pkgbase = webcord
 	pkgdesc = A Discord client implemented directly without Discord API
 	pkgver = 4.14.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/SpacingBat3/WebCord
 	arch = any
 	license = MIT
 	makedepends = npm
 	makedepends = esbuild
-	depends = electron41
+	depends = electron43
 	options = !strip
 	options = !emptydirs
 	source = https://github.com/SpacingBat3/WebCord/archive/v4.14.0/WebCord-4.14.0.tar.gz
