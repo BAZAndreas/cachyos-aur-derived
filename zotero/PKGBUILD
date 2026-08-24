@@ -106,7 +106,7 @@ build() {
     _NODE_OPTIONS="$_NODE_OPTIONS --no-experimental-webstorage"
   fi
   NODE_OPTIONS="$_NODE_OPTIONS" npm run build
-  app/scripts/dir_build -q -p l
+  app/scripts/dir_build -p l
   if [[ "$CARCH" == "aarch64" ]]; then
     mv "$srcdir/zotero-client/app/staging/Zotero_linux-arm64" "$srcdir/zotero-client/app/staging/Zotero_linux-aarch64"
   fi
